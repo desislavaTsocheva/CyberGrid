@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Energy Grid Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: #1e293b; padding: 25px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        h1 { text-align: center; color: #38bdf8; margin-bottom: 25px; }
+        .grid-status { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .card { background: #334155; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card h3 { margin-top: 0; color: #94a3b8; font-size: 14px; text-transform: uppercase; }
+        .node-list { background: #334155; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .node-item { background: #1e293b; padding: 12px; margin: 10px 0; border-radius: 6px; border-left: 5px solid #38bdf8; }
+        .progress-bar { background: #475569; border-radius: 4px; overflow: hidden; height: 16px; margin-top: 8px; }
+        .progress-fill { background: #22c55e; height: 100%; width: 0%; transition: width 0.4s ease; }
+        .btn-group { display: flex; gap: 10px; }
+        .btn { background: #0ea5e9; color: white; border: none; padding: 12px 20px; font-size: 16px; cursor: pointer; border-radius: 6px; flex: 1; font-weight: bold; transition: background 0.2s; }
+        .btn:hover { background: #0284c7; }
+        .btn-reset { background: #64748b; }
+        .btn-reset:hover { background: #475569; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Energy Grid Control Center</h1>
+        
+        <div class="grid-status">
+            <div class="card">
+                <h3>Simulation Step</h3>
+                <div id="hour" style="font-size: 20px; font-weight: bold;">Hour: 0</div>
+            </div>
+            <div class="card">
+                <h3>Energy Balance</h3>
+                <div id="balance" style="color: #4ade80; font-size: 18px; font-weight: bold;">Normal</div>
+            </div>
+            <div class="card">
+                <h3>Total Production</h3>
+                <div id="prod" style="font-size: 20px; color: #4ade80;">0 kW</div>
+            </div>
+            <div class="card">
+                <h3>Total Consumption</h3>
+                <div id="cons" style="font-size: 20px; color: #f87171;">0 kW</div>
+            </div>
+        </div>
+
+        <div class="node-list">
+            <h3>Active Grid Elements</h3>
+            <div id="nodes"></div>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn" onclick="nextStep()">Simulate 1 Hour (Next Step)</button>
+            <button class="btn btn-reset" onclick="resetSimulation()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulation state mirroring your extended C++ project nodes
+        let simulationState = {
+            hour: 0,
+            nodes: [
+                { type: 'solar', name: 'Solar-Park-1', capacity: 50.0, sunlight: 0.8 },
+                { type: 'wind', name: 'Wind-Turbine-1', capacity: 40.0, windSpeed: 12.0 },
+                { type: 'hydro', name: 'Micro-Hydro-1', capacity: 60.0, flowRate: 8.0 },
+                { type: 'diesel', name: 'Backup-Generator', capacity: 30.0, fuelLevel: 50.0, consumptionRate: 5.0 },
+                { type: 'battery', name: 'Home-Battery', capacity: 150.0, charge: 75.0, efficiency: 0.95 },
+                { type: 'consumer', name: 'City-Factory', capacity: 80.0, consumption: 40.0 }
+            ]
+        };
+
+        function updateUI(prod, cons, statusText) {
+            document.getElementById('hour').innerText = `Hour: ${simulationState.hour}`;
+            document.getElementById('prod').innerText = `${prod.toFixed(1)} kW`;
+            document.getElementById('cons').innerText = `${cons.toFixed(1)} kW`;
+            
+            let balanceEl = document.getElementById('balance');
+            balanceEl.innerText = statusText;
+
+            let nodesContainer = document.getElementById('nodes');
+            nodesContainer.innerHTML = '';
+
+            simulationState.nodes.forEach(node => {
+                let html = `<div class="node-item"><strong>${node.name}</strong>`;
+                
+                if (node.type === 'solar') {
+                    let currentProd = node.capacity * node.sunlight;
+                    html += ` (Solar Panel)<br>Production: <b>${currentProd.toFixed(1)} kW</b> (Sunlight: ${node.sunlight.toFixed(2)})`;
+                } else if (node.type === 'wind') {
+                    let factor = Math.min(node.windSpeed / 20.0, 1.0);
+                    let currentProd = node.capacity * factor;
+                    html += ` (Wind Turbine)<br>Production: <b>${currentProd.toFixed(1)} kW</b> (Wind Speed: ${node.windSpeed.toFixed(1)} m/s)`;
+                } else if (node.type === 'hydro') {
+                    let factor = Math.min(node.flowRate / 10.0, 1.0);
+                    let currentProd = node.capacity * factor;
+                    html += ` (Hydro Plant)<br>Production: <b>${currentProd.toFixed(1)} kW</b> (Flow Rate: ${node.flowRate.toFixed(1)})`;
+                } else if (node.type === 'diesel') {
+                    let currentProd = node.fuelLevel > 0 ? node.capacity : 0;
+                    html += ` (Diesel Generator)<br>Production: <b>${currentProd.toFixed(1)} kW</b> (Fuel Level: ${node.fuelLevel.toFixed(1)} L)`;
+                } else if (node.type === 'battery') {
+                    let percent = (node.charge / node.capacity) * 100;
+                    html += ` (Battery)<br>Charge: ${node.charge.toFixed(1)} / ${node.capacity} kW (${percent.toFixed(1)}%)
+                             <div class="progress-bar"><div class="progress-fill" style="width: ${percent}%"></div></div>`;
+                } else if (node.type === 'consumer') {
+                    html += ` (Consumer)<br>Consumption: <b>${node.consumption} kW</b>`;
+                }
+                
+                html += `</div>`;
+                nodesContainer.innerHTML += html;
+            });
+        }
+
+        function nextStep() {
+            simulationState.hour++;
+            let totalProd = 0;
+            let totalCons = 0;
+
+            // Step update and production/consumption calculation
+            simulationState.nodes.forEach(node => {
+                if (node.type === 'solar') {
+                    node.sunlight += 0.01;
+                    if (node.sunlight > 1.0) node.sunlight = 1.0;
+                    totalProd += node.capacity * node.sunlight;
+                } else if (node.type === 'wind') {
+                    node.windSpeed += 1.5;
+                    if (node.windSpeed > 25.0) node.windSpeed = 5.0;
+                    let factor = Math.min(node.windSpeed / 20.0, 1.0);
+                    totalProd += node.capacity * factor;
+                } else if (node.type === 'hydro') {
+                    totalProd += node.capacity * Math.min(node.flowRate / 10.0, 1.0);
+                } else if (node.type === 'diesel') {
+                    if (node.fuelLevel > 0) {
+                        totalProd += node.capacity;
+                        node.fuelLevel -= node.consumptionRate;
+                        if (node.fuelLevel < 0) node.fuelLevel = 0;
+                    }
+                } else if (node.type === 'consumer') {
+                    totalCons += node.consumption;
+                }
+            });
+
+            let netEnergy = totalProd - totalCons;
+            let statusText = "Balanced";
+
+            // Battery distribution logic
+            simulationState.nodes.forEach(node => {
+                if (node.type === 'battery') {
+                    if (netEnergy > 0) {
+                        let energyToAdd = netEnergy * node.efficiency;
+                        node.charge += energyToAdd;
+                        if (node.charge > node.capacity) node.charge = node.capacity;
+                        statusText = `Surplus (+${netEnergy.toFixed(1)} kW) -> Charging`;
+                    } else if (netEnergy < 0) {
+                        let deficit = -netEnergy;
+                        let taken = Math.min(deficit, node.charge);
+                        node.charge -= taken;
+                        statusText = `Deficit (${netEnergy.toFixed(1)} kW) -> Discharging`;
+                    } else {
+                        statusText = "Perfect Balance";
+                    }
+                }
+            });
+
+            updateUI(totalProd, totalCons, statusText);
+        }
+
+        function resetSimulation() {
+            simulationState.hour = 0;
+            simulationState.nodes = [
+                { type: 'solar', name: 'Solar-Park-1', capacity: 50.0, sunlight: 0.8 },
+                { type: 'wind', name: 'Wind-Turbine-1', capacity: 40.0, windSpeed: 12.0 },
+                { type: 'hydro', name: 'Micro-Hydro-1', capacity: 60.0, flowRate: 8.0 },
+                { type: 'diesel', name: 'Backup-Generator', capacity: 30.0, fuelLevel: 50.0, consumptionRate: 5.0 },
+                { type: 'battery', name: 'Home-Battery', capacity: 150.0, charge: 75.0, efficiency: 0.95 },
+                { type: 'consumer', name: 'City-Factory', capacity: 80.0, consumption: 40.0 }
+            ];
+            updateUI(0, 0, "Reset");
+        }
+
+        // Initial load
+        updateUI(0, 0, "Initial State");
+    </script>
+</body>
+</html>

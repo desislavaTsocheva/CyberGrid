@@ -5,22 +5,23 @@
 
 class Battery : public EnergyNode {
 private:
-	double currentCharge;
-	double maxCapacity;
-	double efficiency;
+    double currentCharge;
+    double maxCapacity;
+    double efficiency;
 
 public:
-	Battery();
-	Battery(std::string name, double maxCapacity, double efficiency);
+    Battery();
+    Battery(std::string name, double maxCapacity, double efficiency);
 
-	double getCurrentCharge() const;
-	double getMaxCapacity() const;
+    double getCurrentCharge() const;
+    double getMaxCapacity() const;
+    double getEfficiency() const;
 
-	double producePower() const override;
-	void update(double step) override;
+    double producePower() const override;
+    void update(double step) override;
 
-	void charge(double amount);
-	double discharge(double amount);
+    void charge(double amount);
+    double discharge(double amount);
 };
 
 #endif

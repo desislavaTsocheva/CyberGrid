@@ -1,9 +1,8 @@
 #include "EnergyGrid.hpp"
-#include "Consumer.hpp"
 #include <iostream>
-#include <algorithm>
+#include <fstream>
 
-EnergyGrid::EnergyGrid() {}
+EnergyGrid::EnergyGrid() = default;
 
 void EnergyGrid::addNode(std::unique_ptr<EnergyNode> node) {
     nodes.push_back(std::move(node));
@@ -13,70 +12,87 @@ void EnergyGrid::simulateStep(double timeStep) {
     double totalProduction = 0.0;
     double totalConsumption = 0.0;
 
-    std::vector<Battery*> batteries;
-
     for (const auto& node : nodes) {
         node->update(timeStep);
-
         totalProduction += node->producePower();
-
-        Consumer* consumer = dynamic_cast<Consumer*>(node.get());
-        if (consumer != nullptr) {
-            totalConsumption += consumer->getConsumptionRate() * timeStep;
-        }
-
-        Battery* battery = dynamic_cast<Battery*>(node.get());
-        if (battery != nullptr) {
-            batteries.push_back(battery);
+        
+        Consumer* c = dynamic_cast<Consumer*>(node.get());
+        if (c) {
+            totalConsumption += c->getConsumptionRate() * timeStep;
         }
     }
 
-    double balance = totalProduction - totalConsumption;
+    std::cout << "\nTotal Production: " << totalProduction << " kW"
+              << " | Total Consumption: " << totalConsumption << " kW\n";
 
-    if (balance > 0) {
-        std::cout << "ENERGY SURPLUS: " << balance
-            << " kWh. Charging batteries...\n";
+    double netEnergy = totalProduction - totalConsumption;
 
-        for (auto battery : batteries) {
-            if (balance <= 0) break;
-            battery->charge(balance);
-            balance = 0;
+    if (netEnergy > 0) {
+        std::cout << "Surplus energy: " << netEnergy << " kW. Charging batteries...\n";
+        for (const auto& node : nodes) {
+            Battery* b = dynamic_cast<Battery*>(node.get());
+            if (b && netEnergy > 0) {
+                double spaceBefore = b->getMaxCapacity() - b->getCurrentCharge();
+                b->charge(netEnergy);
+                double spaceAfter = b->getMaxCapacity() - b->getCurrentCharge();
+                netEnergy -= (spaceBefore - spaceAfter);
+            }
         }
-    }
-    else if (balance < 0) {
-        double deficit = -balance;
-
-        std::cout << "ENERGY DEFICIT: " << deficit
-            << " kWh. Discharging batteries...\n";
-
-        for (auto battery : batteries) {
-            if (deficit <= 0) break;
-            double taken = battery->discharge(deficit);
-            deficit -= taken;
+    } else if (netEnergy < 0) {
+        double deficit = -netEnergy;
+        std::cout << "Deficit energy: " << deficit << " kW. Discharging batteries...\n";
+        for (const auto& node : nodes) {
+            Battery* b = dynamic_cast<Battery*>(node.get());
+            if (b && deficit > 0) {
+                double taken = b->discharge(deficit);
+                deficit -= taken;
+            }
         }
-
-        if (deficit > 0) {
-            std::cout << "WARNING: Batteries are depleted! Remaining deficit: "
-                << deficit << " kWh.\n";
-        }
-    }
-    else {
-        std::cout << "Balanced state! Production exactly matches consumption.\n";
+    } else {
+        std::cout << "Energy balanced perfectly.\n";
     }
 }
 
 void EnergyGrid::printGridStatus() const {
-    std::cout << "\n=== ENERGY GRID STATUS ===\n";
-
     for (const auto& node : nodes) {
         std::cout << *node << "\n";
     }
-
-    std::cout << "==========================\n";
 }
 
 void EnergyGrid::sortByCapacity() {
-    std::sort(nodes.begin(), nodes.end(), [](const auto& a, const auto& b) {
+    std::sort(nodes.begin(), nodes.end(), [](const std::unique_ptr<EnergyNode>& a, const std::unique_ptr<EnergyNode>& b) {
         return *a < *b;
-        });
+    });
+}
+
+void EnergyGrid::saveToJson(const std::string& filename, int hour, double production, double consumption) const {
+    std::ofstream file(filename);
+    if (!file.is_open()) return;
+
+    file << "{\n";
+    file << "  \"hour\": " << hour << ",\n";
+    file << "  \"totalProduction\": " << production << ",\n";
+    file << "  \"totalConsumption\": " << consumption << ",\n";
+    file << "  \"nodes\": [\n";
+
+    for (size_t i = 0; i < nodes.size(); ++i) {
+        file << "    {\n";
+        file << "      \"name\": \"" << nodes[i]->getName() << "\",\n";
+        file << "      \"capacity\": " << nodes[i]->getCapacity();
+        
+        // Тук оправяме nodes[i].get() вместо nodes.get()
+        const Battery* b = dynamic_cast<const Battery*>(nodes[i].get());
+        if (b) {
+            file << ",\n      \"currentCharge\": " << b->getCurrentCharge() << ",\n";
+            file << "      \"maxCapacity\": " << b->getMaxCapacity() << "\n";
+        } else {
+            file << "\n";
+        }
+        
+        file << "    }" << (i < nodes.size() - 1 ? "," : "") << "\n";
+    }
+
+    file << "  ]\n";
+    file << "}\n";
+    file.close();
 }
