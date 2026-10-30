@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="CyberGrid/CyberGrid.vcxproj" Id="29e90185-cb8c-49db-afa7-fc21bcb22ad9" />
+</Solution>
