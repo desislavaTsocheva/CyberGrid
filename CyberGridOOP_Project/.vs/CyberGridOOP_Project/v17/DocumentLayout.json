@@ -1,36 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\viole\\OneDrive\\\u0420\u0430\u0431\u043E\u0442\u0435\u043D \u043F\u043B\u043E\u0442\\CyberGridOOP_Project\\",
+  "WorkspaceRootPath": "C:\\Users\\viole\\Projects\\CyberGrid\\CyberGridOOP_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\SolarPanel.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\WindTurbine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyGrid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\DieselGenerator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppCommon.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyNode.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Battery.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Consumer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\HydroPlant.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|C:\\Users\\viole\\Projects\\CyberGrid\\CyberGridOOP_Project\\CyberGridOOP_Project\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6A897E93-C478-49DC-8674-654CDF9A631E}|CyberGridOOP_Project\\CyberGridOOP_Project.vcxproj|solutionrelative:CyberGridOOP_Project\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,136 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Consumer.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Consumer.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Consumer.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Consumer.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Consumer.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:55:48.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DieselGenerator.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\DieselGenerator.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\DieselGenerator.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\DieselGenerator.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\DieselGenerator.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:55:41.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EnergyGrid.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyGrid.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyGrid.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyGrid.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyGrid.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:55:32.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WindTurbine.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\WindTurbine.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\WindTurbine.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\WindTurbine.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\WindTurbine.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:55:18.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SolarPanel.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\SolarPanel.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\SolarPanel.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\SolarPanel.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\SolarPanel.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:55:11.386Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\main.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\main.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\main.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\main.cpp",
-              "ViewState": "AgIAAJgDAAAAAAAAAAAwwKcDAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\viole\\Projects\\CyberGrid\\CyberGridOOP_Project\\CyberGridOOP_Project\\main.cpp",
+              "RelativeDocumentMoniker": "CyberGridOOP_Project\\main.cpp",
+              "ToolTip": "C:\\Users\\viole\\Projects\\CyberGrid\\CyberGridOOP_Project\\CyberGridOOP_Project\\main.cpp",
+              "RelativeToolTip": "CyberGridOOP_Project\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:53:39.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EnergyNode.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyNode.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyNode.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyNode.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\EnergyNode.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:56:09.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Microsoft.CppCommon.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppCommon.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppCommon.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppCommon.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\VC\\v170\\Microsoft.CppCommon.targets",
-              "ViewState": "AgIAAJYAAAAAAAAAAAASwKcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-11-04T17:03:45.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HydroPlant.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\HydroPlant.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\HydroPlant.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\HydroPlant.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\HydroPlant.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:54:55.489Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Battery.cpp",
-              "DocumentMoniker": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Battery.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Battery.cpp",
-              "ToolTip": "C:\\Users\\viole\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Battery.cpp",
-              "RelativeToolTip": "..\\..\\..\\OneDrive - Technical University of Sofia\\Desktop\\CyberGrid\\CyberGridOOP\\cpp\\Battery.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-11-04T16:54:43.637Z",
+              "WhenOpened": "2026-11-04T19:03:32.936Z",
               "EditorCaption": ""
             }
           ]

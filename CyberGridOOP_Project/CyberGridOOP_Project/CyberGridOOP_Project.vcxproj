@@ -127,28 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\Battery.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\Consumer.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\DieselGenerator.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\EnergyGrid.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\EnergyNode.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\HydroPlant.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\main.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\NodeFactory.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\SolarPanel.cpp" />
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\WindTurbine.cpp" />
+    <ClCompile Include="Battery.cpp" />
+    <ClCompile Include="Consumer.cpp" />
+    <ClCompile Include="DieselGenerator.cpp" />
+    <ClCompile Include="EnergyGrid.cpp" />
+    <ClCompile Include="EnergyNode.cpp" />
+    <ClCompile Include="HydroPlant.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="NodeFactory.cpp" />
+    <ClCompile Include="SolarPanel.cpp" />
+    <ClCompile Include="WindTurbine.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\Battery.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\Consumer.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\DieselGenerator.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\EnergyGrid.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\EnergyNode.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\GridExceptions.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\HydroPlant.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\NodeFactory.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\SolarPanel.hpp" />
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\WindTurbine.hpp" />
+    <ClInclude Include="Battery.hpp" />
+    <ClInclude Include="Consumer.hpp" />
+    <ClInclude Include="DieselGenerator.hpp" />
+    <ClInclude Include="EnergyGrid.hpp" />
+    <ClInclude Include="EnergyNode.hpp" />
+    <ClInclude Include="GridExeptions.hpp" />
+    <ClInclude Include="HydroPlant.hpp" />
+    <ClInclude Include="NodeFactory.hpp" />
+    <ClInclude Include="SolarPanel.hpp" />
+    <ClInclude Include="WindTurbine.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

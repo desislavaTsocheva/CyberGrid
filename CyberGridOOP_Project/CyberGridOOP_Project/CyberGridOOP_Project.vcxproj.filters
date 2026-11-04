@@ -5,77 +5,77 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\Battery.cpp">
+    <ClCompile Include="SolarPanel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\WindTurbine.cpp">
+    <ClCompile Include="Consumer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\SolarPanel.cpp">
+    <ClCompile Include="EnergyNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\NodeFactory.cpp">
+    <ClCompile Include="HydroPlant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\main.cpp">
+    <ClCompile Include="NodeFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\HydroPlant.cpp">
+    <ClCompile Include="EnergyGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\EnergyNode.cpp">
+    <ClCompile Include="DieselGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\EnergyGrid.cpp">
+    <ClCompile Include="Battery.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\DieselGenerator.cpp">
+    <ClCompile Include="WindTurbine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\cpp\Consumer.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\Battery.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="SolarPanel.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\Consumer.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="NodeFactory.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\DieselGenerator.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="GridExeptions.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\EnergyGrid.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="EnergyNode.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\EnergyNode.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="EnergyGrid.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\GridExceptions.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="HydroPlant.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\HydroPlant.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="DieselGenerator.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\NodeFactory.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Consumer.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\SolarPanel.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="WindTurbine.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\OneDrive - Technical University of Sofia\Desktop\CyberGrid\CyberGridOOP\hpp\WindTurbine.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Battery.hpp">
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
