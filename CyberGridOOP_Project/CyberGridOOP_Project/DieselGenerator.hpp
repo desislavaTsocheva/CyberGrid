@@ -3,6 +3,7 @@
 
 #include "EnergyNode.hpp"
 
+// DieselGenerator class derived from EnergyNode
 class DieselGenerator : public EnergyNode {
 private:
     double fuelLevel;

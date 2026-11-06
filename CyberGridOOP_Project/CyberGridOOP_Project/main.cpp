@@ -19,11 +19,13 @@
 
 #define ESCAPE 27
 
+// Console dimensions
 const int CONSOLE_WIDTH = 100;
 const int CONSOLE_HEIGHT = 40;
 const int INNER_WIDTH = 98;
 const int HISTORY_LIMIT = 20;
 
+// Color codes for console output
 namespace Color {
     const std::string RESET = "\033[0m";
     const std::string GREEN = "\033[1;32m";
@@ -37,6 +39,7 @@ namespace Color {
     const std::string PURPLE = "\033[1;35m";
 }
 
+// Structure to hold simulation data for each step
 struct SimulationData {
     int step;
     double production;
@@ -47,6 +50,7 @@ struct SimulationData {
 std::deque<SimulationData> history;
 std::deque<std::string> eventLog;
 
+// Function to add an event to the event log, maintaining a maximum of 10 events
 void addEvent(const std::string& event) {
     eventLog.push_front(event);
     if (eventLog.size() > 10) {
@@ -54,6 +58,7 @@ void addEvent(const std::string& event) {
     }
 }
 
+// Function to add simulation data to the history, maintaining a maximum of HISTORY_LIMIT entries
 void addHistory(int step, double production, double consumption) {
     SimulationData data;
     data.step = step;
@@ -66,6 +71,10 @@ void addHistory(int step, double production, double consumption) {
     }
 }
 
+// Function to set up the console window with specific properties
+// This includes setting the title, enabling virtual terminal processing, hiding the cursor, and adjusting the window size and position
+// It also centers the console window on the screen based on the current font size
+// The function uses Windows API calls to achieve these configurations
 void setupConsoleWindow() {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     HWND hwnd = GetConsoleWindow();
@@ -313,6 +322,9 @@ void showEventLog() {
 }
 
 void exportReport(const EnergyGrid& grid) {
+	// Export the simulation history and node information to a CSV file
+	// The report includes the step number, production, consumption, and balance for each recorded simulation step
+	// It also includes the name, type, and capacity of each energy node in the grid
     std::ofstream file("grid_report.csv");
     if (!file.is_open()) {
         addEvent("REPORT EXPORT FAILED");
@@ -330,6 +342,7 @@ void exportReport(const EnergyGrid& grid) {
     for (const auto& node : grid.getNodes()) {
         file << node->getName() << "," << node->getType() << "," << node->getCapacity() << "\n";
     }
+	// Close the file after writing the report
     file.close();
 
     addEvent("GRID REPORT EXPORTED");
@@ -348,7 +361,7 @@ void drawConsoleUI(const EnergyGrid& grid, double production, double consumption
 
     const auto& nodes = grid.getNodes();
     topBorder();
-    printCentered(" ______  ____  ____  ______   ________  _______      ______  _______     _____  ______    ", Color::GREEN);
+    printCentered("   ______  ____  ____  ______   ________  _______      ______  _______     _____  ______    ", Color::GREEN);
     printCentered(" .' ___  ||_   _||_   _||_   _ \\ |_   __  ||_   __ \\    .' ___  ||_   __ \\    |_   _||_   _ `.  ", Color::GREEN);
     printCentered("/ .'   \\_|  \\ \\  / /    | |_) |  | |_ \\_|  | |__) | / .'   \\_|  | |__) |     | |    | | `. \\ ", Color::GREEN);
     printCentered("| |         \\ \\/ /     |  __'.  |  _| _   |  __ /  | |   ____  |  __ /      | |    | |  | | ", Color::GREEN);
@@ -482,6 +495,8 @@ void removeEnergyNode(EnergyGrid& grid) {
     _getch();
 }
 
+// Function to run a simulation step on the energy grid
+
 void runSimulation(EnergyGrid& grid, double& production, double& consumption, int& steps) {
     loadingAnimation("EXECUTING GRID SIMULATION...");
     grid.simulateStep(1.0);
@@ -517,6 +532,9 @@ int main() {
     addEvent("SECURITY PROTOCOL ACTIVATED");
     addEvent("SYSTEM READY");
 
+	// Main loop to handle user input and update the console UI
+	// The loop continues until the user presses the ESCAPE key, allowing for continuous interaction with the energy grid simulation
+	// The switch statement handles different user commands, such as running simulations, adding/removing nodes, viewing analytics, and exporting reports
     while (true) {
         drawConsoleUI(grid, currentProduction, currentConsumption, steps);
 

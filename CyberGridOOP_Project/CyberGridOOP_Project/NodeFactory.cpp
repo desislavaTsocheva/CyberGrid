@@ -5,6 +5,10 @@
 #include "GridExeptions.hpp"
 #include "SolarPanel.hpp"
 
+// Implementation of the NodeFactory class
+// The createNode method creates an energy node based on the specified type
+// It returns a unique pointer to the created EnergyNode
+// If the type is not recognized, it throws a GridException
 std::unique_ptr<EnergyNode> NodeFactory::createNode(const std::string& type, const std::string& name, double capacity, double extra) {
     if (type == "solar") {
         return std::make_unique<SolarPanel>(name, capacity, extra);

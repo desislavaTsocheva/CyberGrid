@@ -3,6 +3,7 @@
 
 #include "EnergyNode.hpp"
 
+// Consumer class derived from EnergyNode
 class Consumer : public EnergyNode {
 private:
     double consumptionRate;

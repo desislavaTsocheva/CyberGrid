@@ -3,6 +3,7 @@
 
 #include "EnergyNode.hpp"
 
+// Battery class derived from EnergyNode
 class Battery : public EnergyNode {
 private:
     double currentCharge;

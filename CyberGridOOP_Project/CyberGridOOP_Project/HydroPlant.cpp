@@ -7,6 +7,8 @@ HydroPlant::HydroPlant(std::string name, double capacity, double flowRate)
     : EnergyNode(name, capacity), waterFlowRate(flowRate) {
 }
 
+// The power produced is proportional to the water flow rate, with a maximum efficiency at a flow rate of 10 units.
+// If the flow rate exceeds 10, the production is capped at the plant's capacity.
 double HydroPlant::producePower() const {
     double factor = waterFlowRate / 10.0;
     if (factor > 1.0) factor = 1.0;

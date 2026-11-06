@@ -4,9 +4,9 @@
   EnergyGrid.cpp
   EnergyNode.cpp
   HydroPlant.cpp
-  main.cpp
   NodeFactory.cpp
   SolarPanel.cpp
   WindTurbine.cpp
+  main.cpp
   Generating Code...
   CyberGridOOP_Project.vcxproj -> C:\Users\viole\Projects\CyberGrid\CyberGridOOP_Project\x64\Debug\CyberGridOOP_Project.exe

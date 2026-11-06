@@ -3,6 +3,7 @@
 
 #include "EnergyNode.hpp"
 
+// HydroPlant class derived from EnergyNode
 class HydroPlant : public EnergyNode {
 private:
     double waterFlowRate;
